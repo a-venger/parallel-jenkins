@@ -32,7 +32,7 @@ pipeline {
         }
         stage('ECHO3') {
           steps {
-            echo 'Amount of nodes - ${NodeNumber}'
+            echo "Amount of nodes - ${NodeNumber}"
           }
         }
       }
