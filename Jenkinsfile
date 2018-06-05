@@ -5,12 +5,13 @@ pipeline {
       parallel {
         stage('ECHO') {
           steps {
-            bat(script: 'echo hello1', returnStdout: true)
+            bat(script: 'ping 8.8.8.8', returnStdout: true, returnStatus: true)
           }
         }
         stage('ECHO2') {
           steps {
             echo 'HELLLO'
+            bat(script: 'ping 9.9.9.9', returnStatus: true, returnStdout: true)
           }
         }
         stage('Ping') {
