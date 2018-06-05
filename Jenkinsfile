@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Build initiation') {
       steps {
-        powershell '$users = 100 $nodes = 3 $users_per_node = [Math]::Ceiling($users/$nodes) Write-Host $users_per_node'
+        powershell '$users = 100; $nodes = 3; $users_per_node = [Math]::Ceiling($users/$nodes); Write-Host $users_per_node'
       }
     }
   }
