@@ -1,5 +1,10 @@
 pipeline {
   agent any
+  parameters {
+    string(name: 'NodeNumber',
+      defaultValue: '1',
+      description: 'Amount of nodes to run test')
+  }    
   stages {
     stage('Parallel11') {
       parallel {
@@ -27,7 +32,7 @@ pipeline {
         }
         stage('ECHO3') {
           steps {
-            echo 'Hello3'
+            echo 'Amount of nodes - ${NodeNumber}'
           }
         }
       }
